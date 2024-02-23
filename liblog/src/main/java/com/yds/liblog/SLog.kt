@@ -98,6 +98,14 @@ object SLog {
         }
     }
 
+    fun saveCrashLog(msg: String?) {
+        saveLog(CRASH_LOG, msg)
+    }
+
+    fun saveBlockLog(msg: String?) {
+        saveLog(BLOCK_LOG, msg)
+    }
+
     /**
      * 查询日志
      * onQueryListener：查询日志监听，监听返回的日志信息

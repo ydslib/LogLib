@@ -89,8 +89,9 @@ class Logger : ILog {
     }
 
     override fun <T> saveLog(context: Context, log: T?) {
+        val loggerModel = log as? LoggerModel ?: return
         synchronized(this) {
-            LogDatabase.getInstance(context).loggerDao().insertLoggerLog(log as? LoggerModel)
+            LogDatabase.getInstance(context).loggerDao().insertLoggerLog(loggerModel)
         }
     }
 
