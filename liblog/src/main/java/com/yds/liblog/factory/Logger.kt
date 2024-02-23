@@ -40,7 +40,7 @@ class Logger : ILog {
     private fun printWholeLog(tag: String?, msg: String?, level: String) {
         var modifyMsg = msg ?: ""
         if (tag.isNullOrEmpty()) return
-        val segmentSize = 3 * 1024
+        val segmentSize = 3 * 1024 + 512
         val length = modifyMsg.length.toLong()
         if (length <= segmentSize) { // 长度小于等于限制直接打印
             printLogByLevel(level, tag, modifyMsg)
