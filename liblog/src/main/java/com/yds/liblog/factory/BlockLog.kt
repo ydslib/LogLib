@@ -12,6 +12,7 @@ class BlockLog : ILog {
         val msg = log as? String
         val time = SimpleDateFormat(SLog.TIME_FORMAT).format(System.currentTimeMillis())
         val blockModel = BlockModel(time = time, msg = msg)
+        //同步，多线程竞争问题
         synchronized(this){
             LogDatabase.getInstance(context).blockDao().insertBlockLog(blockModel)
         }

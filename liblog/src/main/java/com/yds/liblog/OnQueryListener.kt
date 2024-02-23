@@ -2,6 +2,6 @@ package com.yds.liblog
 
 interface OnQueryListener {
 
-    fun onQuery(queryData: Any?)
+    fun onQuery(queryData: List<Any>?)
 
 }

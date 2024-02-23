@@ -38,6 +38,10 @@ object SLog {
         LogFactoryManager.getLogInstance(LOG) as Logger
     }
 
+    /**
+     * 日志打印以及保存
+     * saveLog：是否存储日志
+     */
     fun i(tag: String, msg: String, saveLog: Boolean = false) {
         if (saveLog) {
             saveLogger(contextRef?.get(), tag, msg, "i")
@@ -94,6 +98,10 @@ object SLog {
         }
     }
 
+    /**
+     * 查询日志
+     * onQueryListener：查询日志监听，监听返回的日志信息
+     */
     fun queryLog(type: String, onQueryListener: OnQueryListener) {
         val iLog = LogFactoryManager.getLogInstance(type)
         val context = contextRef?.get() ?: return
@@ -104,6 +112,38 @@ object SLog {
                 onQueryListener.onQuery(iLog?.queryLog(context))
             }
         }
+    }
+
+    private fun printLog(type: String? = null) {
+        val logType = type ?: LOG
+        queryLog(logType, object : OnQueryListener {
+            override fun onQuery(queryData: List<Any>?) {
+                queryData?.forEach {
+                    i(logType, it.toString())
+                }
+            }
+        })
+    }
+
+    /**
+     * 打印log日志
+     */
+    fun printLogger() {
+        printLog()
+    }
+
+    /**
+     * 打印异常日志
+     */
+    fun printCrashLog() {
+        printLog(CRASH_LOG)
+    }
+
+    /**
+     * 打印卡顿日志
+     */
+    fun printBlockLog() {
+        printLog(BLOCK_LOG)
     }
 
 
