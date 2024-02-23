@@ -9,24 +9,73 @@ import java.text.SimpleDateFormat
 
 class Logger : ILog {
 
+    companion object {
+        private const val I = "i"
+        private const val V = "v"
+        private const val D = "d"
+        private const val W = "w"
+        private const val E = "e"
+    }
+
     fun i(tag: String, msg: String) {
-        Log.i(tag, msg)
+        printWholeLog(tag, msg, I)
     }
 
     fun v(tag: String, msg: String) {
-        Log.v(tag, msg)
+        printWholeLog(tag, msg, V)
     }
 
     fun d(tag: String, msg: String) {
-        Log.d(tag, msg)
+        printWholeLog(tag, msg, D)
     }
 
     fun w(tag: String, msg: String) {
-        Log.w(tag, msg)
+        printWholeLog(tag, msg, W)
     }
 
     fun e(tag: String, msg: String) {
-        Log.e(tag, msg)
+        printWholeLog(tag, msg, E)
+    }
+
+    private fun printWholeLog(tag: String?, msg: String?, level: String) {
+        var modifyMsg = msg ?: ""
+        if (tag.isNullOrEmpty()) return
+        val segmentSize = 3 * 1024
+        val length = modifyMsg.length.toLong()
+        if (length <= segmentSize) { // 长度小于等于限制直接打印
+            printLogByLevel(level, tag, modifyMsg)
+        } else {
+            while (modifyMsg.length > segmentSize) { // 循环分段打印日志
+                val logContent = modifyMsg.substring(0, segmentSize)
+                modifyMsg = modifyMsg.replace(logContent, "")
+                printLogByLevel(level, tag, modifyMsg)
+            }
+            printLogByLevel(level, tag, modifyMsg) // 打印剩余日志
+        }
+    }
+
+    private fun printLogByLevel(level: String, tag: String, msg: String) {
+        when (level) {
+            I -> {
+                Log.i(tag, msg)
+            }
+
+            V -> {
+                Log.v(tag, msg)
+            }
+
+            D -> {
+                Log.d(tag, msg)
+            }
+
+            W -> {
+                Log.w(tag, msg)
+            }
+
+            E -> {
+                Log.e(tag, msg)
+            }
+        }
     }
 
     fun saveLoggerLog(context: Context?, tag: String, msg: String, level: String) {
@@ -38,7 +87,7 @@ class Logger : ILog {
     }
 
     override fun <T> saveLog(context: Context, log: T?) {
-        synchronized(this){
+        synchronized(this) {
             LogDatabase.getInstance(context).loggerDao().insertLoggerLog(log as? LoggerModel)
         }
     }

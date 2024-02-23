@@ -102,7 +102,7 @@ object SLog {
      * 查询日志
      * onQueryListener：查询日志监听，监听返回的日志信息
      */
-    fun queryLog(type: String, onQueryListener: OnQueryListener) {
+    private fun queryLog(type: String, onQueryListener: OnQueryListener) {
         val iLog = LogFactoryManager.getLogInstance(type)
         val context = contextRef?.get() ?: return
         if (Looper.getMainLooper().thread.name != Thread.currentThread().name) {
