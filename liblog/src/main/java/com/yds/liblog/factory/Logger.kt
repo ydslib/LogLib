@@ -46,9 +46,11 @@ class Logger : ILog {
             printLogByLevel(level, tag, modifyMsg)
         } else {
             while (modifyMsg.length > segmentSize) { // 循环分段打印日志
+                //截取要打印的部分
                 val logContent = modifyMsg.substring(0, segmentSize)
-                modifyMsg = modifyMsg.replace(logContent, "")
-                printLogByLevel(level, tag, modifyMsg)
+                //截取后面的部分，前面的部分丢弃
+                modifyMsg = modifyMsg.substring(segmentSize)
+                printLogByLevel(level, tag, logContent)
             }
             printLogByLevel(level, tag, modifyMsg) // 打印剩余日志
         }
