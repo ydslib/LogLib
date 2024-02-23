@@ -16,4 +16,8 @@ interface BlockDao {
     @Query("select * from block_model order by id desc")
     fun queryBlockLog(): List<BlockModel>?
 
+    @Query("select * from block_model order by id desc")
+    suspend fun queryBlockLogSuspend(): List<BlockModel>?
+
+
 }

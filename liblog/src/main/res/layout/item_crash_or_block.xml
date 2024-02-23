@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2023-08-16 14:51:12"
+        android:ellipsize="end"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/detail"
+        />
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/time"
+        app:layout_constraintBottom_toBottomOf="@+id/time"
+        app:layout_constraintStart_toEndOf="@+id/time"
+        android:layout_marginStart="10dp"
+        android:textColor="#FF3300"
+        android:textSize="20sp"
+        tools:text="tttttttt"
+        />
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="0dp"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -157,4 +157,16 @@ object SLog {
         }
     }
 
+    fun startLoggerPage(context: Context) {
+        LoggerMsgActivity.startLoggerPage(context)
+    }
+
+    fun startCrashPage(context: Context) {
+        CrashOrBlockActivity.startCrashPage(context)
+    }
+
+    fun startBlockPage(context: Context) {
+        CrashOrBlockActivity.startBlockPage(context)
+    }
+
 }

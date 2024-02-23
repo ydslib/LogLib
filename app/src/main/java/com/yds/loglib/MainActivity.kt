@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.block_log).setOnClickListener {
             SLog.saveLog(SLog.BLOCK_LOG, "block_test")
-            SLog.printBlockLog()
+            SLog.startBlockPage(this)
 
         }
 
         findViewById<Button>(R.id.crash_log).setOnClickListener {
             SLog.saveLog(SLog.CRASH_LOG, "crash_log")
-            SLog.printCrashLog()
+            SLog.startCrashPage(this)
         }
     }
 }

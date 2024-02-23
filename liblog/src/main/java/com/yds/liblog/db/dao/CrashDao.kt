@@ -15,4 +15,7 @@ interface CrashDao {
     @Query("select * from crash_model order by id desc")
     fun queryCrashLog():List<CrashModel>?
 
+    @Query("select * from crash_model order by id desc")
+    suspend fun queryCrashLogSuspend():List<CrashModel>?
+
 }

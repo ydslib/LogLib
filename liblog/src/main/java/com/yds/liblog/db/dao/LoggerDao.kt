@@ -15,4 +15,7 @@ interface LoggerDao {
     @Query(value = "select * from logger_model order by id desc")
     fun queryLoggerLog(): List<LoggerModel>?
 
+    @Query(value = "select * from logger_model order by id desc")
+    suspend fun queryLoggerLogSuspend(): List<LoggerModel>?
+
 }

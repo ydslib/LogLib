@@ -14,7 +14,7 @@ data class LoggerModel(
     var level: String? = null,
     var tag: String? = null,
     var msg: String? = null
-):Serializable {
+) : Serializable {
     override fun toString(): String {
         return "时间：$time\n" +
                 "日志级别：$level\n" +
