@@ -1,7 +1,13 @@
+import org.gradle.internal.impldep.com.amazonaws.util.IOUtils.release
+
+val libraryGroup: String by rootProject.extra
+val vName: String by rootProject.extra
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("maven-publish")
 }
 
 android {
@@ -31,6 +37,23 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    publishing {
+        singleVariant("release")
+    }
+
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+                    groupId = libraryGroup
+                    artifactId = "liblog"
+                    version = vName
+                }
+            }
+        }
     }
 }
 
