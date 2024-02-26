@@ -41,7 +41,12 @@ class CrashOrBlockAdapter(
     override fun onBindViewHolder(holder: LogViewHolder, position: Int) {
         val item = dataList[position]
         holder.let {
-            it.time.text = item.time
+            val h = item.time?.split(" ")
+            if (h?.size == 2) {
+                it.time.text = h[1]
+            } else {
+                it.time.text = item.time
+            }
             it.msg.text = item.msg
             it.detail.text = item.toString()
             it.detail.setOnLongClickListener { v ->

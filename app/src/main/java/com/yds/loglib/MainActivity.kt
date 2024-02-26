@@ -12,8 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_layout)
 
         findViewById<Button>(R.id.log).setOnClickListener {
-            SLog.i("MainActivity", "test", true)
-            SLog.printLogger()
+//            SLog.v("MainActivity", "test", true)
+//            SLog.d("MainActivity", "test", true)
+//            SLog.w("MainActivity", "test", true)
+            SLog.e("MainActivity", "fedsfdsdfdsfdsfdsfdsdfsdfsdfsdfsdfsdfdfsfdfedsfdsdfdsfdsfdsfdsdfsdfsdfsdfsdfsdfdfsfd", true)
+            SLog.startLoggerPage(this)
         }
 
         findViewById<Button>(R.id.block_log).setOnClickListener {
@@ -23,7 +26,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.crash_log).setOnClickListener {
-            SLog.saveCrashLog("crash_log")
+            try {
+                2/0
+            }catch (e:Exception){
+                SLog.saveCrashLog(e.stackTraceToString())
+            }
             SLog.startCrashPage(this)
         }
     }

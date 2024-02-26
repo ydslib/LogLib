@@ -10,11 +10,11 @@ import java.text.SimpleDateFormat
 class Logger : ILog {
 
     companion object {
-        private const val I = "i"
-        private const val V = "v"
-        private const val D = "d"
-        private const val W = "w"
-        private const val E = "e"
+        const val I = "I"
+        const val V = "V"
+        const val D = "D"
+        const val W = "W"
+        const val E = "E"
     }
 
     fun i(tag: String, msg: String) {

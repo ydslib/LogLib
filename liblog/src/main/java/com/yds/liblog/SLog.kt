@@ -44,35 +44,35 @@ object SLog {
      */
     fun i(tag: String, msg: String, saveLog: Boolean = false) {
         if (saveLog) {
-            saveLogger(contextRef?.get(), tag, msg, "i")
+            saveLogger(contextRef?.get(), tag, msg, "I")
         }
         logger.i(tag, msg)
     }
 
     fun v(tag: String, msg: String, saveLog: Boolean = false) {
         if (saveLog) {
-            saveLogger(contextRef?.get(), tag, msg, "v")
+            saveLogger(contextRef?.get(), tag, msg, "V")
         }
         logger.v(tag, msg)
     }
 
     fun d(tag: String, msg: String, saveLog: Boolean = false) {
         if (saveLog) {
-            saveLogger(contextRef?.get(), tag, msg, "d")
+            saveLogger(contextRef?.get(), tag, msg, "D")
         }
         logger.d(tag, msg)
     }
 
     fun w(tag: String, msg: String, saveLog: Boolean = false) {
         if (saveLog) {
-            saveLogger(contextRef?.get(), tag, msg, "w")
+            saveLogger(contextRef?.get(), tag, msg, "W")
         }
         logger.w(tag, msg)
     }
 
     fun e(tag: String, msg: String, saveLog: Boolean = false) {
         if (saveLog) {
-            saveLogger(contextRef?.get(), tag, msg, "e")
+            saveLogger(contextRef?.get(), tag, msg, "E")
         }
         logger.e(tag, msg)
     }
