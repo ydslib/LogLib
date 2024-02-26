@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Looper
 import com.yds.liblog.factory.LogFactoryManager
 import com.yds.liblog.factory.Logger
+import com.yds.liblog.logcatch.BlockLogPrinter
+import com.yds.liblog.logcatch.ExceptionCaughtHandler
 import java.lang.ref.WeakReference
 import java.util.concurrent.Executors
 
@@ -30,8 +32,14 @@ object SLog {
     }
 
     //初始化
-    fun initLog(context: Context) {
+    fun initLog(context: Context, initCrash: Boolean = false, initBlock: Boolean = false) {
         contextRef = WeakReference(context)
+        if (initCrash) {
+            ExceptionCaughtHandler.initCrashLog(context)
+        }
+        if (initBlock) {
+            Looper.getMainLooper().setMessageLogging(BlockLogPrinter())
+        }
     }
 
     val logger by lazy {

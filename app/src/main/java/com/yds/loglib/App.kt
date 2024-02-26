@@ -7,7 +7,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        SLog.initLog(this)
+        SLog.initLog(this, initCrash = true, initBlock = true)
     }
 
 }
