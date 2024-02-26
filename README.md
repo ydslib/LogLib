@@ -1,6 +1,37 @@
 # 日志库设计文档
 日志库包含：logger代码级别的日志，crash崩溃日志，卡顿监测堆栈日志
 
+# 使用
+## 分支
+- master
+master分支的脚本是使用kotlin DSL写的，不兼容低版本的gradle与gradle-plugin
+- old
+old分支的脚本是使用Groovy写的，兼容低版本的gradle与gradle-plugin
+
+在根部的build.gradle中添加如下代码
+```groovy
+dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+	repositories {
+		mavenCentral()
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+master分支的liblog库依赖
+在项目的build.gradle.kt中
+```groovy
+implementation 'com.github.ydslib:LogLib:1.0.0'
+```
+
+old分支的liblog库依赖
+在项目的build.gradle中
+```groovy
+implementation 'com.github.ydslib:LogLib:old-1.0.0'
+```
+
+
 ## 1. SLog
 外观模式，提供统一的入口
 ### 1.1 方法
