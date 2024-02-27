@@ -39,17 +39,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    publications {
-        // 这个mavenJava可以随便填，只是一个任务名字而已
-        // MavenPublication必须有，这个是调用的任务类
-        mavenJava(MavenPublication){
-            groupId = "com.yds.liblog"
-            artifactId = "liblog"
-            version = "1.0.0"
-            from components.java
-        }
-    }
 }
 
 dependencies {
