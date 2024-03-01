@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yds.liblog.adapter.LoggerAdapter
+import com.yds.liblog.R
 
 class LoggerMsgActivity : AppCompatActivity() {
 

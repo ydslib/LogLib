@@ -5,9 +5,9 @@
     <application>
         <activity
             android:name=".CrashOrBlockActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".LoggerMsgActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 </manifest>
