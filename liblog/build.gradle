@@ -4,7 +4,9 @@ plugins {
     id("kotlin-kapt")
     id("maven-publish")
 }
-group = "com.yds.ydslib"
+group = "com.github.ydslib"
+version = "old-1.0.0"
+
 
 android {
     compileSdkVersion 31
@@ -37,6 +39,22 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    groupId = 'com.my-company'
+                    artifactId = 'my-library'
+                    version = '1.0'
+
+                    afterEvaluate {
+                        from components.release
+                    }
+                }
+            }
+        }
     }
 
 }
