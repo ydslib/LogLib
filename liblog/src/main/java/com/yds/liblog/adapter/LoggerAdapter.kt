@@ -30,7 +30,7 @@ class LoggerAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoggerViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_logger, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.liblog_item_logger, parent, false)
         return LoggerViewHolder(view)
     }
 

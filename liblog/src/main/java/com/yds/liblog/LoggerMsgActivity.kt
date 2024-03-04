@@ -21,7 +21,7 @@ class LoggerMsgActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_log_msg)
+        setContentView(R.layout.liblog_activity_log_msg)
 
         viewModel = ViewModelProvider(this)[LogViewModel::class.java]
 

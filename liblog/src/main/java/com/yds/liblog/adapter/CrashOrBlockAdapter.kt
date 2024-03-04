@@ -26,7 +26,7 @@ class CrashOrBlockAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_crash_or_block, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.liblog_item_crash_or_block, parent, false)
         return LogViewHolder(view)
     }
 
