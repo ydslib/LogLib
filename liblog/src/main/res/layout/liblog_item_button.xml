@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/liblog_btn_shape"
+    android:textColor="#ffffff"
+    android:textSize="14sp"
+    android:textAllCaps="false"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="20dp"
+    tools:text="test" />

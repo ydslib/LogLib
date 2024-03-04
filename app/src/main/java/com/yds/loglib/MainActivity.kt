@@ -27,11 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.crash_log).setOnClickListener {
             try {
-                2/0
-            }catch (e:Exception){
+                2 / 0
+            } catch (e: Exception) {
                 SLog.saveCrashLog(e.stackTraceToString())
             }
             SLog.startCrashPage(this)
+        }
+
+        findViewById<Button>(R.id.log_entry).setOnClickListener {
+            SLog.startLogEntry(this@MainActivity)
         }
     }
 }
