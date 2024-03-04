@@ -9,5 +9,8 @@
         <activity
             android:name=".LoggerMsgActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".LiblogEntryActivity"
+            android:theme="@style/LiblogDialogStyle" />
     </application>
 </manifest>

@@ -22,4 +22,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="卡顿日志"/>
+    <Button
+        android:id="@+id/log_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="日志入口"
+        />
 </LinearLayout>

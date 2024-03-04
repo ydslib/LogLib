@@ -90,7 +90,7 @@ object SLog {
      * type:日志类型 LOG,CRASH_LOG,BLOCK_LOG
      * msg:日志信息
      */
-    fun saveLog(type: String, msg: String?) {
+    private fun saveLog(type: String, msg: String?) {
         //工厂模式，根据类型获取对应的日志对象
         val iLog = LogFactoryManager.getLogInstance(type)
         //弱引用，减少内存泄漏
@@ -183,6 +183,10 @@ object SLog {
 
     fun startBlockPage(context: Context) {
         CrashOrBlockActivity.startBlockPage(context)
+    }
+
+    fun startLogEntry(context: Context) {
+        LiblogEntryActivity.startLogPageEntry(context)
     }
 
 }
