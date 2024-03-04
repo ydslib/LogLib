@@ -22,11 +22,11 @@ class LoggerAdapter(
 
 
     class LoggerViewHolder(val root: View) : ViewHolder(root) {
-        val time = root.findViewById<TextView>(R.id.time)
-        val tag = root.findViewById<TextView>(R.id.tag)
-        val level = root.findViewById<TextView>(R.id.level)
-        val summary = root.findViewById<TextView>(R.id.summary)
-        val detail = root.findViewById<TextView>(R.id.detail)
+        val time = root.findViewById<TextView>(R.id.liblog_time)
+        val tag = root.findViewById<TextView>(R.id.liblog_tag)
+        val level = root.findViewById<TextView>(R.id.liblog_level)
+        val summary = root.findViewById<TextView>(R.id.liblog_summary)
+        val detail = root.findViewById<TextView>(R.id.liblog_detail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoggerViewHolder {

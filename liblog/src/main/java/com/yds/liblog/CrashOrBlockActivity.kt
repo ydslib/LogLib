@@ -23,9 +23,9 @@ class CrashOrBlockActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[LogViewModel::class.java]
 
-        val title = findViewById<TextView>(R.id.title)
-        val back = findViewById<ImageView>(R.id.back)
-        val recycler = findViewById<RecyclerView>(R.id.recycler)
+        val title = findViewById<TextView>(R.id.liblog_title)
+        val back = findViewById<ImageView>(R.id.liblog_back)
+        val recycler = findViewById<RecyclerView>(R.id.liblog_recycler)
 
 
         val logType = intent.extras?.getString(LOG_TYPE)

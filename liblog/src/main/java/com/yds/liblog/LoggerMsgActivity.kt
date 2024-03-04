@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yds.liblog.adapter.LoggerAdapter
-import com.yds.liblog.R
 
 class LoggerMsgActivity : AppCompatActivity() {
 
@@ -33,13 +32,13 @@ class LoggerMsgActivity : AppCompatActivity() {
                 loggerAdapter.notifyDataSetChanged()
             }
         }
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler)
+        val recyclerView = findViewById<RecyclerView>(R.id.liblog_recycler)
         recyclerView.adapter = loggerAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val title = findViewById<TextView>(R.id.title)
+        val title = findViewById<TextView>(R.id.liblog_title)
         title.text = "Logger Log"
-        val back = findViewById<ImageView>(R.id.back)
+        val back = findViewById<ImageView>(R.id.liblog_back)
         back.setOnClickListener {
             finish()
         }

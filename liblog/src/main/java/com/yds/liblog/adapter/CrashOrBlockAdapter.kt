@@ -20,9 +20,9 @@ class CrashOrBlockAdapter(
 
 
     class LogViewHolder(val root: View) : ViewHolder(root) {
-        val time = root.findViewById<TextView>(R.id.time)
-        val msg = root.findViewById<TextView>(R.id.msg)
-        val detail = root.findViewById<TextView>(R.id.detail)
+        val time = root.findViewById<TextView>(R.id.liblog_time)
+        val msg = root.findViewById<TextView>(R.id.liblog_msg)
+        val detail = root.findViewById<TextView>(R.id.liblog_detail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogViewHolder {

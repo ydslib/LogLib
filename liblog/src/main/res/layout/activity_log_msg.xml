@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/liblog_title"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="#ffffff"
@@ -19,21 +19,21 @@
         tools:text="日志" />
 
     <ImageView
-        android:id="@+id/back"
+        android:id="@+id/liblog_back"
         android:layout_width="30dp"
         android:layout_height="0dp"
         android:paddingVertical="10dp"
         android:src="@drawable/liblog_back"
-        app:layout_constraintBottom_toBottomOf="@+id/title"
-        app:layout_constraintStart_toStartOf="@+id/title"
-        app:layout_constraintTop_toTopOf="@+id/title" />
+        app:layout_constraintBottom_toBottomOf="@+id/liblog_title"
+        app:layout_constraintStart_toStartOf="@+id/liblog_title"
+        app:layout_constraintTop_toTopOf="@+id/liblog_title" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/liblog_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/liblog_title" />
 </androidx.constraintlayout.widget.ConstraintLayout>
