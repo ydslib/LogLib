@@ -28,7 +28,7 @@ implementation 'com.github.ydslib:LogLib:1.0.0'
 old分支的liblog库依赖
 在项目的build.gradle中
 ```groovy
-implementation 'com.github.ydslib:LogLib:old-1.0.0'
+implementation 'com.github.ydslib:LogLib:old-1.0.7'
 ```
 
 
